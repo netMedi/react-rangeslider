@@ -37,7 +37,6 @@ class Slider extends Component {
     reverse: PropTypes.bool,
     labels: PropTypes.object,
     handleLabel: PropTypes.string,
-    keyDownPreventDefault: PropTypes.bool,
     tabIndex: PropTypes.number,
     format: PropTypes.func,
     onChangeStart: PropTypes.func,
@@ -54,7 +53,6 @@ class Slider extends Component {
     tooltip: true,
     reverse: false,
     labels: {},
-    keyDownPreventDefault: true,
     tabIndex: 0,
     handleLabel: ''
   };
@@ -171,10 +169,6 @@ class Slider extends Component {
    * @return {void}
    */
   handleKeyDown = e => {
-    if (this.props.keyDownPreventDefault) {
-      e.preventDefault()
-    }
-
     const { keyCode } = e
     const { value, min, max, step, onChange } = this.props
     let sliderValue
@@ -184,11 +178,13 @@ class Slider extends Component {
       case 39:
         sliderValue = value + step > max ? max : value + step
         onChange && onChange(sliderValue, e)
+        e.preventDefault()
         break
       case 37:
       case 40:
         sliderValue = value - step < min ? min : value - step
         onChange && onChange(sliderValue, e)
+        e.preventDefault()
         break
     }
   };
