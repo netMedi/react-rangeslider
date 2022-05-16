@@ -173,16 +173,19 @@ class Slider extends Component {
     const { value, min, max, step, onChange } = this.props
     let sliderValue
 
+    const inc = () => { sliderValue = value + step > max ? max : value + step }
+    const dec = () => { sliderValue = value - step < min ? min : value - step }
+
     switch (keyCode) {
       case 38:
       case 39:
-        sliderValue = value + step > max ? max : value + step
+        this.props.reverse && keyCode === 39 ? dec() : inc()
         onChange && onChange(sliderValue, e)
         e.preventDefault()
         break
       case 37:
       case 40:
-        sliderValue = value - step < min ? min : value - step
+        this.props.reverse && keyCode === 37 ? inc() : dec()
         onChange && onChange(sliderValue, e)
         e.preventDefault()
         break
