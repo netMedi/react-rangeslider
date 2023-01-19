@@ -39,6 +39,7 @@ class Slider extends Component {
     handleLabel: PropTypes.string,
     tabIndex: PropTypes.number,
     ariaLabelledby: PropTypes.string,
+    ariaRequired: PropTypes.bool,
     format: PropTypes.func,
     onChangeStart: PropTypes.func,
     onChange: PropTypes.func,
@@ -296,6 +297,7 @@ class Slider extends Component {
       max,
       tabIndex,
       ariaLabelledby,
+      ariaRequired,
       handleLabel
     } = this.props
     const { active } = this.state
@@ -370,6 +372,7 @@ class Slider extends Component {
           aria-valuenow={value}
           aria-orientation={orientation}
           aria-labelledby={ariaLabelledby}
+          aria-required={ariaRequired}
         >
           {showTooltip
             ? <div
