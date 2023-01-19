@@ -23,6 +23,7 @@ exports[`Rangeslider specs should render basic slider with defaults 1`] = `
     onMouseDown={[Function anonymous]}
     onTouchEnd={[Function anonymous]}
     onTouchMove={[Function anonymous]}
+    role="slider"
     style={
       Object {
         "left": "0px"
@@ -64,6 +65,7 @@ exports[`Rangeslider specs should render slider when props passed in 1`] = `
     onMouseDown={[Function anonymous]}
     onTouchEnd={[Function anonymous]}
     onTouchMove={[Function anonymous]}
+    role="slider"
     style={
       Object {
         "left": "0px"

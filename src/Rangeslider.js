@@ -357,6 +357,7 @@ class Slider extends Component {
           ref={sh => {
             this.handle = sh
           }}
+          role='slider'
           className='rangeslider__handle'
           onMouseDown={this.handleStart}
           onTouchMove={this.handleDrag}
@@ -376,6 +377,7 @@ class Slider extends Component {
                 this.tooltip = st
               }}
               className='rangeslider__handle-tooltip'
+              aria-hidden
               >
               <span>{this.handleFormat(value)}</span>
             </div>
