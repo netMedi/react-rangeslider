@@ -38,6 +38,7 @@ class Slider extends Component {
     labels: PropTypes.object,
     handleLabel: PropTypes.string,
     tabIndex: PropTypes.number,
+    ariaLabelledby: PropTypes.string,
     format: PropTypes.func,
     onChangeStart: PropTypes.func,
     onChange: PropTypes.func,
@@ -294,6 +295,7 @@ class Slider extends Component {
       min,
       max,
       tabIndex,
+      ariaLabelledby,
       handleLabel
     } = this.props
     const { active } = this.state
@@ -349,10 +351,6 @@ class Slider extends Component {
         onMouseUp={this.handleEnd}
         onTouchStart={this.handleStart}
         onTouchEnd={this.handleEnd}
-        aria-valuemin={min}
-        aria-valuemax={max}
-        aria-valuenow={value}
-        aria-orientation={orientation}
       >
         <div className='rangeslider__fill' style={fillStyle} />
         <div
@@ -366,6 +364,11 @@ class Slider extends Component {
           onKeyDown={this.handleKeyDown}
           style={handleStyle}
           tabIndex={tabIndex}
+          aria-valuemin={min}
+          aria-valuemax={max}
+          aria-valuenow={value}
+          aria-orientation={orientation}
+          aria-labelledby={ariaLabelledby}
         >
           {showTooltip
             ? <div
