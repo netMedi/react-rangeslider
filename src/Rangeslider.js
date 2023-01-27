@@ -280,6 +280,7 @@ class Slider extends Component {
         this.labels = sl
       }}
       className={cx('rangeslider__labels')}
+      aria-hidden
     >
       {labels}
     </ul>

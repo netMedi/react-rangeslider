@@ -37,6 +37,7 @@ exports[`Rangeslider specs should render basic slider with defaults 1`] = `
     </div>
   </div>
   <ul
+    aria-hidden={true}
     className="rangeslider__labels" />
 </div>
 `;
@@ -80,6 +81,7 @@ exports[`Rangeslider specs should render slider when props passed in 1`] = `
     </div>
   </div>
   <ul
+    aria-hidden={true}
     className="rangeslider__labels" />
 </div>
 `;
