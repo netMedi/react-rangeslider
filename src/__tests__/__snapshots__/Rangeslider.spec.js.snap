@@ -13,6 +13,8 @@ exports[`Rangeslider specs should render basic slider with defaults 1`] = `
       }
     } />
   <div
+    aria-describedby={undefined}
+    aria-invalid={undefined}
     aria-labelledby={undefined}
     aria-orientation="horizontal"
     aria-required={undefined}
@@ -57,6 +59,8 @@ exports[`Rangeslider specs should render slider when props passed in 1`] = `
       }
     } />
   <div
+    aria-describedby={undefined}
+    aria-invalid={undefined}
     aria-labelledby={undefined}
     aria-orientation="horizontal"
     aria-required={undefined}
