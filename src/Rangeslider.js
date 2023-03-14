@@ -41,7 +41,7 @@ class Slider extends Component {
     'aria-labelledby': PropTypes.string,
     'aria-required': PropTypes.bool,
     'aria-invalid': PropTypes.bool,
-    'aria-describedby': PropTypes.bool,
+    'aria-describedby': PropTypes.string,
     format: PropTypes.func,
     onChangeStart: PropTypes.func,
     onChange: PropTypes.func,
